@@ -15,7 +15,7 @@ function draw(){
 
 function keyPressed(){
     switch(key){
-       case '-':
+       case '=':
        mgr.showScene( homeScreen );
        break;
        case '0':
@@ -30,7 +30,7 @@ function keyPressed(){
        case '7':
        mgr.showScene( traceGame );
        break; 
-       case '=':        
+       case '-':        
        mgr.showScene( levelGame);
        break;    
     }//end switch
@@ -44,12 +44,12 @@ function keyPressed(){
     textSize(15)
     fill("black")
     text('Home menu', 60, 80);
-    text("To play Writing Game, press 0", 20,100);
-    text("To play Ball Game, press 9", 20,120);
-    text("To play Square Game, press 8", 20,140);
-    text("To play Trace Game, press 7", 20,160);
-    text("To play the Level Game, press = ", 20,180);
-    text("To return to this screen at any time, press -", 20,200);
+    text("To play Writing Game, press 0", 20,120);
+    text("To play Ball Game, press 9", 20,140);
+    text("To play Square Game, press 8", 20,160);
+    text("To play Trace Game, press 7", 20,180);
+    text("To play the Level Game, press - ", 20,100);
+    text("To return to this screen at any time, press =", 20,200);
    }//end enter
   }//end homeScreen
 
@@ -98,12 +98,12 @@ function keyPressed(){
   function correct(){
       removeElements()
       textSize(15)
-      text('You typed correctly! Press 9 to try again, and - to return to the home           screen', 10,250)
+      text('You typed correctly! Press 0 to try again, and = to return to the home screen', 10,350)
   }//end correct
   function wrong(){
     removeElements()
     textSize(15)
-    text('You typed incorrectly. Press 9 to try again and - to return to home screen',     10,250)
+    text('You typed incorrectly. Press 0 to try again and = to return to home screen',     10,350)
   }//end wrong
 }//end writingGame
 
@@ -153,7 +153,7 @@ function ballGame(){
     fill(60)
     text('---GAME OVER---', width / 4, height / 4)
     text("YOUR SCORE: " + score, width / 3, height / 3 )
-    text('Press - to return to home screen \n Move the mouse across the screen to           continue or\n press 8 to reset and try again', width / 2, height / 2 );
+    text('Press = to return to home screen \n Move the mouse across the screen to continue or\n press 8 to reset and try again', width / 2, height / 2 );
   }//end endScreen
 }//end ballGame
 
@@ -166,7 +166,7 @@ function squareGame(){
   this.enter = function() {
     createCanvas(700, 700);
     background(266);
-    textSize(25)
+    textSize(20)
     stroke(0);
     fill('black')
     text("Click on the blue squares so that they become pink." ,10, 60)
@@ -188,7 +188,7 @@ function squareGame(){
   this.draw = function(){
     if (finish) return;
     if (counter == 0) {
-      textSize(25)
+      textSize(20)
       stroke(0);
       fill('black')
       text("Click on the blue squares so that they become pink." ,10, 60)
@@ -233,7 +233,7 @@ function squareGame(){
     fill('black')
     textAlign(CENTER);
     text("Good job! You made all of the squares pink!", 350,300);
-    text('Press - to return to home screen \nPress 7 to reset and try again', width /       2,   height / 2 );
+    text('Press = to return to home screen \nPress 8 to reset and try again', width /       2,   height / 2 );
   } //end completed
 }//end square game
 
@@ -255,7 +255,7 @@ function traceGame(){
     stroke("purple");
     strokeWeight(8);
     if (mouseIsPressed === true) {
-      line(mouseX, mouseY, pmouseX, pmouseY);
+    line(mouseX, mouseY, pmouseX, pmouseY);
     }//end if statement
   }//end this.draw 
 }//end traceGame
@@ -348,7 +348,7 @@ function levelGame(){
     background(220);
     fill("black");
     textSize(20)
-    text("Press = to play again, or - to return to the main menu", width/2, height/2);
+    text("Press = to return to the main menu", width/2, height/2);
     text("You reached 100 points. Congrats!", width/2, height/3);
   }//end end()
 }//end levelGame
